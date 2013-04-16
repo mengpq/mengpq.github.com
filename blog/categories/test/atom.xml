@@ -4,7 +4,7 @@
   <title><![CDATA[Category: test | mengpq's Blog]]></title>
   <link href="http://mengpq.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://mengpq.github.io/"/>
-  <updated>2013-04-17T04:22:05+08:00</updated>
+  <updated>2013-04-17T04:26:17+08:00</updated>
   <id>http://mengpq.github.io/</id>
   <author>
     <name><![CDATA[mengpq]]></name>
@@ -14,14 +14,232 @@
 
   
   <entry>
-    <title type="html"><![CDATA[hello world]]></title>
+    <title type="html"><![CDATA[Splay Tree]]></title>
     <link href="http://mengpq.github.io/blog/2013/04/17/hello-world/"/>
     <updated>2013-04-17T03:34:00+08:00</updated>
     <id>http://mengpq.github.io/blog/2013/04/17/hello-world</id>
-    <content type="html"><![CDATA[<h1>hello world</h1>
+    <content type="html"><![CDATA[<p>```</p>
 
-<pre><code>## hello world ##
+<h1>include &lt;stdio.h></h1>
+
+<h1>include &lt;string.h></h1>
+
+<h1>include <algorithm></h1>
+
+<p>using namespace std;</p>
+
+<h1>define REP(i,st,ed) for (int i=st; i&lt;ed; i++)</h1>
+
+<p>const int MAXN = 102400;</p>
+
+<p>struct splayNode{</p>
+
+<pre><code>splayNode *fa,*ch[2];
+bool rev;
+int size,key,add;
+splayNode(int key=0){
+    this-&gt;key=key;
+    size=1,add=0,rev=false;
+    fa=ch[0]=ch[1]=NULL;
+}
+void clear(){
+    if (ch[0]) ch[0]-&gt;clear();
+    if (ch[1]) ch[1]-&gt;clear();
+    delete this;
+}
+void update(){
+    size=(ch[0]?ch[0]-&gt;size:0)+(ch[1]?ch[1]-&gt;size:0)+1;
+}
+void down(){
+    if (add){
+        if (ch[0]) ch[0]-&gt;key+=add,ch[0]-&gt;add+=add;
+        if (ch[1]) ch[1]-&gt;key+=add,ch[1]-&gt;add+=add;
+        add=0;
+    }
+    if (rev){
+        swap(ch[0],ch[1]);
+        if (ch[0]) ch[0]-&gt;rev^=1;
+        if (ch[1]) ch[1]-&gt;rev^=1;
+        rev=false;
+    }
+}
+splayNode* rightmost(){
+    down();
+    if (ch[1]) return ch[1]-&gt;rightmost();
+    return this;
+}
 </code></pre>
+
+<p>} <em>root,</em>temp;</p>
+
+<p>typedef splayNode* ptr;</p>
+
+<p>int n,m,k1,k2,data[MAXN];</p>
+
+<p>ptr build(int data[], int l, int r, ptr fa=NULL){</p>
+
+<pre><code>int mid=(l+r)/2;
+ptr node=new splayNode(data[mid]);
+node-&gt;fa=fa;
+if (l&lt;mid) node-&gt;ch[0]=build(data,l,mid-1,node);
+if (mid&lt;r) node-&gt;ch[1]=build(data,mid+1,r,node);
+node-&gt;update();
+return node;
+</code></pre>
+
+<p>}</p>
+
+<p>void rotate(ptr x){</p>
+
+<pre><code>ptr y=x-&gt;fa;
+if (x-&gt;fa=y-&gt;fa) y-&gt;fa-&gt;ch[y-&gt;fa-&gt;ch[1]==y]=x;
+int o=y-&gt;ch[0]==x;
+if (y-&gt;ch[!o]=x-&gt;ch[o]) x-&gt;ch[o]-&gt;fa=y;
+x-&gt;ch[o]=y;
+y-&gt;fa=x;
+y-&gt;update();
+x-&gt;update();
+</code></pre>
+
+<p>}</p>
+
+<p>void splay(ptr x, ptr fa){</p>
+
+<pre><code>while (x-&gt;fa!=fa){
+    /* this condition are need sometime
+     * if (x-&gt;fa-&gt;fa) x-&gt;fa-&gt;fa-&gt;down();
+     * if (x-&gt;fa) x-&gt;fa-&gt;down();
+     * x-&gt;down();
+    */
+    if (x-&gt;fa-&gt;fa==fa) rotate(x); else{
+        int o1=x-&gt;fa-&gt;ch[0]==x,o2=x-&gt;fa-&gt;fa-&gt;ch[0]==x-&gt;fa;
+        if (o1==o2) rotate(x-&gt;fa),rotate(x); else rotate(x),rotate(x);
+    }
+}
+</code></pre>
+
+<p>}</p>
+
+<p>ptr select(ptr x, int k){</p>
+
+<pre><code>x-&gt;down();
+if (x-&gt;ch[0]){
+    if (x-&gt;ch[0]-&gt;size&gt;=k) return select(x-&gt;ch[0],k);
+    k-=x-&gt;ch[0]-&gt;size;
+}
+if (k==1) return x;
+return select(x-&gt;ch[1],k-1);
+</code></pre>
+
+<p>}</p>
+
+<p>ptr join(ptr x, ptr y){</p>
+
+<pre><code>ptr temp=x-&gt;rightmost();
+splay(temp,NULL);
+temp-&gt;ch[1]=y;
+y-&gt;fa=temp;
+temp-&gt;update();
+return temp;
+</code></pre>
+
+<p>}</p>
+
+<p>void del(int k){</p>
+
+<pre><code>root=select(root,k);
+splay(root,NULL);
+root-&gt;ch[0]-&gt;fa=root-&gt;ch[1]-&gt;fa=NULL;
+root=join(root-&gt;ch[0],root-&gt;ch[1]);
+</code></pre>
+
+<p>}</p>
+
+<p>void insert(int key, int k){</p>
+
+<pre><code>root=select(root,k-1);
+splay(root,NULL);
+temp=select(root,k);
+splay(temp,root);
+temp-&gt;ch[0]=new splayNode(key);
+temp-&gt;ch[0]-&gt;fa=temp;
+temp-&gt;update();
+root-&gt;update();
+</code></pre>
+
+<p>}</p>
+
+<p>void init(){</p>
+
+<pre><code>REP(i,1,n+1) scanf("%d",&amp;data[i]);
+root=build(data,0,n+1);
+</code></pre>
+
+<p>}</p>
+
+<p>void solve(){</p>
+
+<pre><code>char st[10];
+int number;
+REP(i,0,m){
+    scanf("%s",st);
+    if (st[0]=='a'){
+        scanf("%d",&amp;number);
+        root=select(root,1);
+        splay(root,NULL);
+        temp=select(root,k2+2);
+        splay(temp,root);
+        temp-&gt;ch[0]-&gt;key+=number;
+        temp-&gt;ch[0]-&gt;add+=number;
+    } else if (st[0]=='r'){
+        root=select(root,1);
+        splay(root,NULL);
+        temp=select(root,k1+2);
+        splay(temp,root);
+        root-&gt;ch[1]-&gt;ch[0]-&gt;rev^=1;
+    } else if (st[0]=='i'){
+        scanf("%d",&amp;number);
+        insert(number,3);
+    } else if (st[0]=='d'){
+        del(2);
+    } else if (st[0]=='m'){
+        scanf("%d",&amp;number);
+        if (number==1){
+            temp=select(root,root-&gt;size-1);
+            int key=temp-&gt;key;
+            del(root-&gt;size-1);
+            insert(key,2);
+        } else{
+            temp=select(root,2);
+            int key=temp-&gt;key;
+            del(2);
+            insert(key,root-&gt;size);
+        }
+    } else if (st[0]=='q'){
+        root=select(root,2);
+        splay(root,NULL);
+        printf("%d\n",root-&gt;key);
+    }
+}
+root-&gt;clear();
+</code></pre>
+
+<p>}</p>
+
+<p>int main(){</p>
+
+<pre><code>int ca=0;
+while (scanf("%d%d%d%d",&amp;n,&amp;m,&amp;k1,&amp;k2)){
+    if (n==0 &amp;&amp; m==0 &amp;&amp; k1==0 &amp;&amp; k2==0) return 0;
+    printf("Case #%d:\n",++ca);
+    init();
+    solve();
+}
+return 0;
+</code></pre>
+
+<p>}
+```</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[mengpq's Blog]]></title>
   <link href="http://mengpq.github.io/atom.xml" rel="self"/>
   <link href="http://mengpq.github.io/"/>
-  <updated>2013-04-17T04:22:05+08:00</updated>
+  <updated>2013-04-17T04:26:17+08:00</updated>
   <id>http://mengpq.github.io/</id>
   <author>
     <name><![CDATA[mengpq]]></name>
@@ -14,14 +14,377 @@
 
   
   <entry>
-    <title type="html"><![CDATA[hello world]]></title>
+    <title type="html"><![CDATA[Splay Tree]]></title>
     <link href="http://mengpq.github.io/blog/2013/04/17/hello-world/"/>
     <updated>2013-04-17T03:34:00+08:00</updated>
     <id>http://mengpq.github.io/blog/2013/04/17/hello-world</id>
-    <content type="html"><![CDATA[<h1>hello world</h1>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+<span class='line-number'>156</span>
+<span class='line-number'>157</span>
+<span class='line-number'>158</span>
+<span class='line-number'>159</span>
+<span class='line-number'>160</span>
+<span class='line-number'>161</span>
+<span class='line-number'>162</span>
+<span class='line-number'>163</span>
+<span class='line-number'>164</span>
+<span class='line-number'>165</span>
+<span class='line-number'>166</span>
+<span class='line-number'>167</span>
+<span class='line-number'>168</span>
+<span class='line-number'>169</span>
+<span class='line-number'>170</span>
+<span class='line-number'>171</span>
+<span class='line-number'>172</span>
+<span class='line-number'>173</span>
+<span class='line-number'>174</span>
+<span class='line-number'>175</span>
+<span class='line-number'>176</span>
+<span class='line-number'>177</span>
+<span class='line-number'>178</span>
+<span class='line-number'>179</span>
+<span class='line-number'>180</span>
+<span class='line-number'>181</span>
+<span class='line-number'>182</span>
+<span class='line-number'>183</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;stdio.h&gt;
+</span><span class='line'>#include &lt;string.h&gt;
+</span><span class='line'>#include &lt;algorithm&gt;
+</span><span class='line'>using namespace std;
+</span><span class='line'>
+</span><span class='line'>#define REP(i,st,ed) for (int i=st; i&lt;ed; i++)
+</span><span class='line'>
+</span><span class='line'>const int MAXN = 102400;
+</span><span class='line'>
+</span><span class='line'>struct splayNode{
+</span><span class='line'>    splayNode *fa,*ch[2];
+</span><span class='line'>    bool rev;
+</span><span class='line'>    int size,key,add;
+</span><span class='line'>    splayNode(int key=0){
+</span><span class='line'>        this-&gt;key=key;
+</span><span class='line'>        size=1,add=0,rev=false;
+</span><span class='line'>        fa=ch[0]=ch[1]=NULL;
+</span><span class='line'>    }
+</span><span class='line'>    void clear(){
+</span><span class='line'>        if (ch[0]) ch[0]-&gt;clear();
+</span><span class='line'>        if (ch[1]) ch[1]-&gt;clear();
+</span><span class='line'>        delete this;
+</span><span class='line'>    }
+</span><span class='line'>    void update(){
+</span><span class='line'>        size=(ch[0]?ch[0]-&gt;size:0)+(ch[1]?ch[1]-&gt;size:0)+1;
+</span><span class='line'>    }
+</span><span class='line'>    void down(){
+</span><span class='line'>        if (add){
+</span><span class='line'>            if (ch[0]) ch[0]-&gt;key+=add,ch[0]-&gt;add+=add;
+</span><span class='line'>            if (ch[1]) ch[1]-&gt;key+=add,ch[1]-&gt;add+=add;
+</span><span class='line'>            add=0;
+</span><span class='line'>        }
+</span><span class='line'>        if (rev){
+</span><span class='line'>            swap(ch[0],ch[1]);
+</span><span class='line'>            if (ch[0]) ch[0]-&gt;rev^=1;
+</span><span class='line'>            if (ch[1]) ch[1]-&gt;rev^=1;
+</span><span class='line'>            rev=false;
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>    splayNode* rightmost(){
+</span><span class='line'>        down();
+</span><span class='line'>        if (ch[1]) return ch[1]-&gt;rightmost();
+</span><span class='line'>        return this;
+</span><span class='line'>    }
+</span><span class='line'>} *root,*temp;
+</span><span class='line'>
+</span><span class='line'>typedef splayNode* ptr;
+</span><span class='line'>
+</span><span class='line'>int n,m,k1,k2,data[MAXN];
+</span><span class='line'>
+</span><span class='line'>ptr build(int data[], int l, int r, ptr fa=NULL){
+</span><span class='line'>    int mid=(l+r)/2;
+</span><span class='line'>    ptr node=new splayNode(data[mid]);
+</span><span class='line'>    node-&gt;fa=fa;
+</span><span class='line'>    if (l&lt;mid) node-&gt;ch[0]=build(data,l,mid-1,node);
+</span><span class='line'>    if (mid&lt;r) node-&gt;ch[1]=build(data,mid+1,r,node);
+</span><span class='line'>    node-&gt;update();
+</span><span class='line'>    return node;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>void rotate(ptr x){
+</span><span class='line'>    ptr y=x-&gt;fa;
+</span><span class='line'>    if (x-&gt;fa=y-&gt;fa) y-&gt;fa-&gt;ch[y-&gt;fa-&gt;ch[1]==y]=x;
+</span><span class='line'>    int o=y-&gt;ch[0]==x;
+</span><span class='line'>    if (y-&gt;ch[!o]=x-&gt;ch[o]) x-&gt;ch[o]-&gt;fa=y;
+</span><span class='line'>    x-&gt;ch[o]=y;
+</span><span class='line'>    y-&gt;fa=x;
+</span><span class='line'>    y-&gt;update();
+</span><span class='line'>    x-&gt;update();
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>void splay(ptr x, ptr fa){
+</span><span class='line'>    while (x-&gt;fa!=fa){
+</span><span class='line'>        /* this condition are need sometime
+</span><span class='line'>         * if (x-&gt;fa-&gt;fa) x-&gt;fa-&gt;fa-&gt;down();
+</span><span class='line'>         * if (x-&gt;fa) x-&gt;fa-&gt;down();
+</span><span class='line'>         * x-&gt;down();
+</span><span class='line'>        */
+</span><span class='line'>        if (x-&gt;fa-&gt;fa==fa) rotate(x); else{
+</span><span class='line'>            int o1=x-&gt;fa-&gt;ch[0]==x,o2=x-&gt;fa-&gt;fa-&gt;ch[0]==x-&gt;fa;
+</span><span class='line'>            if (o1==o2) rotate(x-&gt;fa),rotate(x); else rotate(x),rotate(x);
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>ptr select(ptr x, int k){
+</span><span class='line'>    x-&gt;down();
+</span><span class='line'>    if (x-&gt;ch[0]){
+</span><span class='line'>        if (x-&gt;ch[0]-&gt;size&gt;=k) return select(x-&gt;ch[0],k);
+</span><span class='line'>        k-=x-&gt;ch[0]-&gt;size;
+</span><span class='line'>    }
+</span><span class='line'>    if (k==1) return x;
+</span><span class='line'>    return select(x-&gt;ch[1],k-1);
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>ptr join(ptr x, ptr y){
+</span><span class='line'>    ptr temp=x-&gt;rightmost();
+</span><span class='line'>    splay(temp,NULL);
+</span><span class='line'>    temp-&gt;ch[1]=y;
+</span><span class='line'>    y-&gt;fa=temp;
+</span><span class='line'>    temp-&gt;update();
+</span><span class='line'>    return temp;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>void del(int k){
+</span><span class='line'>    root=select(root,k);
+</span><span class='line'>    splay(root,NULL);
+</span><span class='line'>    root-&gt;ch[0]-&gt;fa=root-&gt;ch[1]-&gt;fa=NULL;
+</span><span class='line'>    root=join(root-&gt;ch[0],root-&gt;ch[1]);
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>void insert(int key, int k){
+</span><span class='line'>    root=select(root,k-1);
+</span><span class='line'>    splay(root,NULL);
+</span><span class='line'>    temp=select(root,k);
+</span><span class='line'>    splay(temp,root);
+</span><span class='line'>    temp-&gt;ch[0]=new splayNode(key);
+</span><span class='line'>    temp-&gt;ch[0]-&gt;fa=temp;
+</span><span class='line'>    temp-&gt;update();
+</span><span class='line'>    root-&gt;update();
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>void init(){
+</span><span class='line'>    REP(i,1,n+1) scanf("%d",&data[i]);
+</span><span class='line'>    root=build(data,0,n+1);
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>void solve(){
+</span><span class='line'>    char st[10];
+</span><span class='line'>    int number;
+</span><span class='line'>    REP(i,0,m){
+</span><span class='line'>        scanf("%s",st);
+</span><span class='line'>        if (st[0]=='a'){
+</span><span class='line'>            scanf("%d",&number);
+</span><span class='line'>            root=select(root,1);
+</span><span class='line'>            splay(root,NULL);
+</span><span class='line'>            temp=select(root,k2+2);
+</span><span class='line'>            splay(temp,root);
+</span><span class='line'>            temp-&gt;ch[0]-&gt;key+=number;
+</span><span class='line'>            temp-&gt;ch[0]-&gt;add+=number;
+</span><span class='line'>        } else if (st[0]=='r'){
+</span><span class='line'>            root=select(root,1);
+</span><span class='line'>            splay(root,NULL);
+</span><span class='line'>            temp=select(root,k1+2);
+</span><span class='line'>            splay(temp,root);
+</span><span class='line'>            root-&gt;ch[1]-&gt;ch[0]-&gt;rev^=1;
+</span><span class='line'>        } else if (st[0]=='i'){
+</span><span class='line'>            scanf("%d",&number);
+</span><span class='line'>            insert(number,3);
+</span><span class='line'>        } else if (st[0]=='d'){
+</span><span class='line'>            del(2);
+</span><span class='line'>        } else if (st[0]=='m'){
+</span><span class='line'>            scanf("%d",&number);
+</span><span class='line'>            if (number==1){
+</span><span class='line'>                temp=select(root,root-&gt;size-1);
+</span><span class='line'>                int key=temp-&gt;key;
+</span><span class='line'>                del(root-&gt;size-1);
+</span><span class='line'>                insert(key,2);
+</span><span class='line'>            } else{
+</span><span class='line'>                temp=select(root,2);
+</span><span class='line'>                int key=temp-&gt;key;
+</span><span class='line'>                del(2);
+</span><span class='line'>                insert(key,root-&gt;size);
+</span><span class='line'>            }
+</span><span class='line'>        } else if (st[0]=='q'){
+</span><span class='line'>            root=select(root,2);
+</span><span class='line'>            splay(root,NULL);
+</span><span class='line'>            printf("%d\n",root-&gt;key);
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>    root-&gt;clear();
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>int main(){
+</span><span class='line'>    int ca=0;
+</span><span class='line'>    while (scanf("%d%d%d%d",&n,&m,&k1,&k2)){
+</span><span class='line'>        if (n==0 && m==0 && k1==0 && k2==0) return 0;
+</span><span class='line'>        printf("Case #%d:\n",++ca);
+</span><span class='line'>        init();
+</span><span class='line'>        solve();
+</span><span class='line'>    }
+</span><span class='line'>    return 0;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>## hello world ##
-</code></pre>
 ]]></content>
   </entry>
   
