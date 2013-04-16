@@ -4,7 +4,7 @@
   <title><![CDATA[Category: test | mengpq's Blog]]></title>
   <link href="http://mengpq.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://mengpq.github.io/"/>
-  <updated>2013-04-17T04:26:17+08:00</updated>
+  <updated>2013-04-17T04:30:21+08:00</updated>
   <id>http://mengpq.github.io/</id>
   <author>
     <name><![CDATA[mengpq]]></name>
@@ -18,7 +18,7 @@
     <link href="http://mengpq.github.io/blog/2013/04/17/hello-world/"/>
     <updated>2013-04-17T03:34:00+08:00</updated>
     <id>http://mengpq.github.io/blog/2013/04/17/hello-world</id>
-    <content type="html"><![CDATA[<p>```</p>
+    <content type="html"><![CDATA[<p>``` c SplayTree</p>
 
 <h1>include &lt;stdio.h></h1>
 
