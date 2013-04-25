@@ -130,29 +130,33 @@
 )</li>
 </ul>
 </li>
-<li>一个简单的hello程序</li>
+<li>一个简单的hello程序
+&#8220;` python hello,world!
+import web
+urls = (&#8216;/&#8217;, &#8216;hello&#8217;) #识别URL/，然后交给hello这个类处理，其他无法识别的URL将提示no found
+app = web.application(urls, globals())</li>
+</ul>
+
+
+<p>  class hello:</p>
+
+<pre><code>  def GET(self):                      
+      return 'hello,world!'
+</code></pre>
+
+  if <strong>name</strong> == &#8217;<strong>main</strong>&#8217;:
+
+<pre><code>  app.run()
+</code></pre>
+
+<p>  &#8220;`</p>
+
+<ul>
+<li>python main.py 然后在浏览器访问localhost:8080/ 就可以看到hello,world!</li>
 </ul>
 </li>
 </ul>
 
-
-<pre><code>``` python hello,world!
-    import web
-    urls = ('/', 'hello') #识别URL/，然后交给hello这个类处理，其他无法识别的URL将提示no found
-    app = web.application(urls, globals())  
-
-    class hello:
-        def GET(self):                      
-            return 'hello,world!'
-    
-    if __name__ == '__main__':
-        app.run()
-    ```
-</code></pre>
-
-
-<pre><code>* python main.py 然后在浏览器访问localhost:8080/ 就可以看到hello,world!
-</code></pre>
 </div>
 
 
