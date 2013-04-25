@@ -4,7 +4,7 @@
   <title><![CDATA[mengpq's Blog]]></title>
   <link href="http://mengpq.github.io/atom.xml" rel="self"/>
   <link href="http://mengpq.github.io/"/>
-  <updated>2013-04-26T00:24:01+08:00</updated>
+  <updated>2013-04-26T01:04:35+08:00</updated>
   <id>http://mengpq.github.io/</id>
   <author>
     <name><![CDATA[mengpq]]></name>
@@ -12,6 +12,54 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[webpy学习笔记]]></title>
+    <link href="http://mengpq.github.io/blog/2013/04/26/webpyxue-xi-bi-ji/"/>
+    <updated>2013-04-26T00:30:00+08:00</updated>
+    <id>http://mengpq.github.io/blog/2013/04/26/webpyxue-xi-bi-ji</id>
+    <content type="html"><![CDATA[<ul>
+<li>建立一个简单的网页
+
+<ul>
+<li>首先要建一个urls表，这个表用正则表达式来匹配url，然后作出相应的动作
+
+<ul>
+<li>urls = (&#8216;/&#8217;, &#8216;index&#8217;) 这个表示处理用index这个类来处理&#8217;URL/&#8217;这样的url</li>
+<li>urls = (&#8216;/test/<em>&#8217;, &#8216;test&#8217;) 这个表示对于&#8217;URL/test/.</em>&#8216;这样的url，用test这个类去处理，那个.*是正则表达式匹配</li>
+</ul>
+</li>
+<li>GET
+
+<ul>
+<li>在写一个响应的类时，如果网页有GET请求，那么就在那个类中定义一个GET函数，返回一个HTML页面或者一些信息</li>
+</ul>
+</li>
+<li>POST
+
+<ul>
+<li>可以用POST提交表单给其他函数处理</li>
+</ul>
+</li>
+<li>模板
+
+<ul>
+<li>在./下建立一个templates的目录，然后在目录下建立.html或者.xml的文件，然后把render绑定templates目录
+
+<ul>
+<li>render = web.template.render(&#8216;templates/&#8217;)</li>
+</ul>
+</li>
+<li>在html中的第一行用$def with (var) 声明接收var变量，然后我们就可以在html中使用$var来获取和改变变量的值。因为web.py会转移任何用到的变量，所以如果当$var的值为一段HTML代码时，这一段代码将被转义显示为纯文本，为了避免这个问题，可以这样<strong>$:var</strong>使用$var的值。
+)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[use octopress]]></title>
