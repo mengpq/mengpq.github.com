@@ -9,9 +9,11 @@
   <meta name="author" content="mengpq">
 
   
-  <meta name="description" content="
-发表文章的流程 rake new_post[&#8220;title&#8221;]
-bundle exe ">
+  <meta name="description" content="发表文章的流程 rake new_post[&#8220;title&#8221;]
+修改 source/_post下对应的文章，支持markdown语法
+rake preview 默认的端口是4000，在本机预览修改
+rake generate 生成静态页面
+rake deploy &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -103,7 +105,11 @@ bundle exe ">
 
 <ul>
 <li>rake new_post[&#8220;title&#8221;]</li>
-<li>bundle exe</li>
+<li>修改 source/_post下对应的文章，支持markdown语法</li>
+<li>rake preview 默认的端口是4000，在本机预览修改</li>
+<li>rake generate 生成静态页面</li>
+<li>rake deploy 上传到github.com进行更新</li>
+<li>由于本机的rake版本和默认的那个版本不一样，所以不能直接用，然后根据提示，要在rake之前加bundle exec</li>
 </ul>
 </li>
 </ul>
