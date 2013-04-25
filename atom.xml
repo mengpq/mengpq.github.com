@@ -4,7 +4,7 @@
   <title><![CDATA[mengpq's Blog]]></title>
   <link href="http://mengpq.github.io/atom.xml" rel="self"/>
   <link href="http://mengpq.github.io/"/>
-  <updated>2013-04-17T04:48:45+08:00</updated>
+  <updated>2013-04-26T00:08:18+08:00</updated>
   <id>http://mengpq.github.io/</id>
   <author>
     <name><![CDATA[mengpq]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[use octopress]]></title>
+    <link href="http://mengpq.github.io/blog/2013/04/26/use-octopress/"/>
+    <updated>2013-04-26T00:02:00+08:00</updated>
+    <id>http://mengpq.github.io/blog/2013/04/26/use-octopress</id>
+    <content type="html"><![CDATA[<ul>
+<li>发表文章的流程
+
+<ul>
+<li>rake new_post[&#8220;title&#8221;]</li>
+<li>bundle exe</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Splay Tree]]></title>
