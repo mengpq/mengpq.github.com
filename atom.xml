@@ -4,7 +4,7 @@
   <title><![CDATA[mengpq's Blog]]></title>
   <link href="http://mengpq.github.io/atom.xml" rel="self"/>
   <link href="http://mengpq.github.io/"/>
-  <updated>2013-04-26T01:34:22+08:00</updated>
+  <updated>2013-04-26T01:35:27+08:00</updated>
   <id>http://mengpq.github.io/</id>
   <author>
     <name><![CDATA[mengpq]]></name>
@@ -84,9 +84,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>fosdfosdifdsiopfsdipfodi</p>
-
-<pre><code>* python main.py 然后在浏览器访问localhost:8080/ 就可以看到hello,world!
+<pre><code>* 运行程序 python main.py 然后在浏览器访问localhost:8080/ 就可以看到hello,world!
 </code></pre>
 ]]></content>
   </entry>
