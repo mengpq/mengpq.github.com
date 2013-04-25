@@ -4,7 +4,7 @@
   <title><![CDATA[mengpq's Blog]]></title>
   <link href="http://mengpq.github.io/atom.xml" rel="self"/>
   <link href="http://mengpq.github.io/"/>
-  <updated>2013-04-26T01:07:10+08:00</updated>
+  <updated>2013-04-26T01:10:59+08:00</updated>
   <id>http://mengpq.github.io/</id>
   <author>
     <name><![CDATA[mengpq]]></name>
@@ -22,26 +22,26 @@
 <li>建立一个简单的网页
 
 <ul>
-<li><p>首先要建一个urls表，这个表用正则表达式来匹配url，然后作出相应的动作</p>
+<li>首先要建一个urls表，这个表用正则表达式来匹配url，然后作出相应的动作
 
 <ul>
 <li>urls = (&#8216;/&#8217;, &#8216;index&#8217;) 这个表示处理用index这个类来处理&#8217;URL/&#8217;这样的url</li>
 <li>urls = (&#8216;/test/<em>&#8217;, &#8216;test&#8217;) 这个表示对于&#8217;URL/test/.</em>&#8216;这样的url，用test这个类去处理，那个.*是正则表达式匹配</li>
 </ul>
 </li>
-<li><p>GET</p>
+<li>GET
 
 <ul>
 <li>在写一个响应的类时，如果网页有GET请求，那么就在那个类中定义一个GET函数，返回一个HTML页面或者一些信息</li>
 </ul>
 </li>
-<li><p>POST</p>
+<li>POST
 
 <ul>
 <li>可以用POST提交表单给其他函数处理</li>
 </ul>
 </li>
-<li><p>模板</p>
+<li>模板
 
 <ul>
 <li>在./下建立一个templates的目录，然后在目录下建立.html或者.xml的文件，然后把render绑定templates目录
