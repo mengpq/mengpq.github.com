@@ -4,7 +4,7 @@
   <title><![CDATA[mengpq's Blog]]></title>
   <link href="http://mengpq.github.io/atom.xml" rel="self"/>
   <link href="http://mengpq.github.io/"/>
-  <updated>2013-04-26T01:22:16+08:00</updated>
+  <updated>2013-04-26T01:24:11+08:00</updated>
   <id>http://mengpq.github.io/</id>
   <author>
     <name><![CDATA[mengpq]]></name>
@@ -71,11 +71,9 @@
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-<span class='line-number'>11</span>
 </pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">web</span>
 </span><span class='line'><span class="n">urls</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="s">&#39;hello&#39;</span><span class="p">)</span> <span class="c">#识别URL/，然后交给hello这个类处理，其他无法识别的URL将提示no found</span>
 </span><span class='line'><span class="n">app</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">application</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span>
-</span><span class='line'>  <span class="o">*</span> <span class="n">python</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="err">然后在浏览器访问</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span> <span class="err">就可以看到</span><span class="n">hello</span><span class="p">,</span><span class="n">world</span><span class="err">!</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">class</span> <span class="nc">hello</span><span class="p">:</span>
 </span><span class='line'>  <span class="k">def</span> <span class="nf">GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -85,6 +83,9 @@
 </span><span class='line'>  <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<pre><code>    * python main.py 然后在浏览器访问localhost:8080/ 就可以看到hello,world!
+</code></pre>
 ]]></content>
   </entry>
   
