@@ -9,8 +9,7 @@
   <meta name="author" content="mengpq">
 
   
-  <meta name="description" content="建立一个简单的网页 首先要建一个urls表，这个表用正则表达式来匹配url，然后作出相应的动作 urls = (&#8216;/&#8217;, &#8216;index&#8217;) 这个表示处理用index这个类来处理&#8217;URL/&#8217;这样的url
-urls = (&# &hellip;">
+  <meta name="description" content="建立一个简单的网页 在当前目录下建立一个main.py，作为整个web服务的启动程序，里面主要是做一些初始化工作。写完main.py之后，直接python main.py会启动一个以8080为端口的web服务，如果想用其他端口，运行时添加一个port的端口值：python main.py &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -101,7 +100,8 @@ urls = (&# &hellip;">
 <li>建立一个简单的网页
 
 <ul>
-<li>首先要建一个urls表，这个表用正则表达式来匹配url，然后作出相应的动作
+<li>在当前目录下建立一个main.py，作为整个web服务的启动程序，里面主要是做一些初始化工作。写完main.py之后，直接python main.py会启动一个以8080为端口的web服务，如果想用其他端口，运行时添加一个port的端口值：python main.py port</li>
+<li>main.py中首先要建一个urls表，这个表用正则表达式来匹配url，然后作出相应的动作，然后<strong>web.application(urls,globals()).run()</strong>启动web服务
 
 <ul>
 <li>urls = (&#8216;/&#8217;, &#8216;index&#8217;) 这个表示处理用index这个类来处理&#8217;URL/&#8217;这样的url</li>
@@ -133,9 +133,33 @@ urls = (&# &hellip;">
 )</li>
 </ul>
 </li>
+<li>一个简单的hello程序</li>
 </ul>
 </li>
 </ul>
+
+
+<figure class='code'><figcaption><span>hello,world!</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">web</span>
+</span><span class='line'><span class="n">urls</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="s">&#39;hello&#39;</span><span class="p">)</span>                    <span class="c">#识别URL/，然后交给hello这个类处理，其他无法识别的URL将提示no found</span>
+</span><span class='line'><span class="n">app</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">application</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">hello</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class='line'>      <span class="k">return</span> <span class="s">&#39;hello,world!&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span class='line'>  <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
 
 </div>
   
